@@ -1,0 +1,34 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'afplay -v 0.6 \"$HOME/Downloads/bruh.mp3\"'"
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'afplay -v 0.6 \"$HOME/Library/Sounds/surprise-mother-fer.aiff\"'"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'afplay -v 0.6 \"$HOME/Downloads/movie_1.mp3\"'"
+          }
+        ]
+      }
+    ]
+  }
+}

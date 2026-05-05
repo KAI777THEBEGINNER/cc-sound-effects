@@ -94,15 +94,34 @@ This setup intentionally uses `$HOME/Library/Sounds/` instead of `/System/Librar
 - `/System/Library/Sounds/` is protected by macOS SIP (System Integrity Protection). Even `sudo` cannot write there without disabling SIP, which is not recommended.
 - `~/Library/Sounds/` is user-writable, works identically with `afplay`, and survives macOS updates.
 
-## Converting Your Own Sounds
+## Using Your Own Sounds
 
-If you want to swap in your own MP3s downloaded from elsewhere:
+`afplay` supports MP3 natively — no conversion needed. Just point the config to your MP3 file. See `settings.example.json`:
+
+```json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'afplay -v 0.6 \"$HOME/Downloads/bruh.mp3\"'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+If you prefer AIFF, you can still convert with `afconvert`:
 
 ```bash
 afconvert input.mp3 "$HOME/Library/Sounds/my-sound.aiff" -f AIFF -d BEI16
 ```
 
-Then update the filename in `~/.claude/settings.json` and restart Claude Code.
+Update `~/.claude/settings.json` and restart Claude Code.
 
 ## Sound Sources
 

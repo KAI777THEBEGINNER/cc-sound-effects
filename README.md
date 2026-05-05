@@ -94,15 +94,34 @@ open ~/.claude/settings.json
 - `/System/Library/Sounds/` 受 macOS SIP（系统完整性保护）限制，即使 `sudo` 也无法写入，不建议关闭 SIP。
 - `~/Library/Sounds/` 用户可写，与 `afplay` 完全兼容，且 macOS 升级后不受影响。
 
-## 转换你自己的音效
+## 使用你自己的音效
 
-如果你想换成自己下载的 MP3：
+`afplay` 原生支持 MP3，无需转换。直接把 MP3 路径写进配置即可。参考 `settings.example.json`：
+
+```json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'afplay -v 0.6 \"$HOME/Downloads/bruh.mp3\"'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+如果你偏好 AIFF 格式，也可以用 `afconvert` 转换：
 
 ```bash
 afconvert input.mp3 "$HOME/Library/Sounds/my-sound.aiff" -f AIFF -d BEI16
 ```
 
-然后更新 `~/.claude/settings.json` 中的文件名，并重启 Claude Code。
+修改完 `~/.claude/settings.json` 后，重启 Claude Code 生效。
 
 ## 音效来源
 

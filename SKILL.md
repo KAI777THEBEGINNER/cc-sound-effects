@@ -36,7 +36,8 @@ cp sounds/surprise-mother-fer.aiff "$HOME/Library/Sounds/"
 cp sounds/rizz-sound-effect.aiff "$HOME/Library/Sounds/"
 ```
 
-> If you downloaded the MP3 versions from MyInstants yourself, convert them to AIFF first:
+> `afplay` supports MP3 natively. You can point directly to an MP3 file without conversion.
+> If you prefer AIFF, convert with:
 > ```bash
 > afconvert input.mp3 "$HOME/Library/Sounds/output.aiff" -f AIFF -d BEI16
 > ```
