@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "sh -c 'afplay -v 0.6 \"$HOME/Library/Sounds/rizz-sound-effect.aiff\"'"
+            "command": "sh -c 'afplay -v 1 \"$HOME/Library/Sounds/rizz-sound-effect.aiff\"'"
           }
         ]
       }
@@ -25,7 +25,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "sh -c 'afplay -v 0.6 \"$HOME/Downloads/movie_1.mp3\"'"
+            "command": "sh -c 'afplay -v 0.48 \"$HOME/Downloads/movie_1.mp3\"'"
           }
         ]
       }
