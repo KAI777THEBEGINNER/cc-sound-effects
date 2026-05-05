@@ -106,7 +106,7 @@ open ~/.claude/settings.json
         "hooks": [
           {
             "type": "command",
-            "command": "sh -c 'afplay -v 0.6 \"$HOME/Downloads/bruh.mp3\"'"
+            "command": "sh -c 'afplay -v 0.6 \"$HOME/Library/Sounds/rizz-sound-effect.aiff\"'"
           }
         ]
       }
